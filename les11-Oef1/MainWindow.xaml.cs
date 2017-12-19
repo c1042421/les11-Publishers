@@ -27,6 +27,8 @@ namespace les11_Oef1
             InitializeComponent();
 
             treePublishers.ItemsSource = dm.GetAllPublishers();
+            cmbJob.ItemsSource = dm.GetAllJob();
+            cmbJob.DisplayMemberPath = "job_desc";
         }
 
         private void treePublishers_SelectedItemChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
@@ -35,10 +37,37 @@ namespace les11_Oef1
 
             if (employee != null)
             {
+                txtId.Text = employee.emp_id;
                 txtFirstName.Text = employee.fname;
                 txtLastName.Text = employee.lname;
-                txtJob.Text = dm.GetJobByID(employee.job_id).job_desc;
+                cmbJob.SelectedIndex = employee.job_id;
             }
+        }
+
+        private void btnUpdate_Click(object sender, RoutedEventArgs e)
+        {
+            dm.UpdateEmployee(GetEmployeeFromTextBoxes());
+        }
+
+        private void btnInsert_Click(object sender, RoutedEventArgs e)
+        {
+            dm.InsertEmployee(GetEmployeeFromTextBoxes());
+        }
+
+        private void btnDelete_Click(object sender, RoutedEventArgs e)
+        {
+            dm.DeleteEmployee(GetEmployeeFromTextBoxes());
+        }
+
+        private Employee GetEmployeeFromTextBoxes()
+        {
+            return new Employee()
+            {
+                emp_id = txtId.Text,
+                fname = txtFirstName.Text,
+                lname = txtLastName.Text,
+                job_id = (short)cmbJob.SelectedIndex
+            };
         }
     }
 }

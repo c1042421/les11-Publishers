@@ -21,7 +21,7 @@
         <StackPanel Orientation="Vertical">
             <StackPanel Orientation="Horizontal" Margin="5">
                 <TextBlock Width="75" Margin="5">Id</TextBlock>
-                <TextBox Margin="5" Width="150"></TextBox>
+                <TextBox Margin="5" Width="150" Name="txtId"></TextBox>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="5">
                 <TextBlock Width="75" Margin="5">Firstname</TextBlock>
@@ -36,11 +36,11 @@
                 <ComboBox Margin="5" Width="150" Name="cmbJob"></ComboBox>
             </StackPanel>
             <StackPanel>
-                <Button Margin="5">Update Employee</Button>
-                <Button Margin="5">Insert Employee</Button>
+                <Button Name="btnUpdate" Margin="5" Click="btnUpdate_Click">Update Employee</Button>
+                <Button Name="btnInsert" Margin="5" Click="btnInsert_Click">Insert Employee</Button>
             </StackPanel>
             <StackPanel>
-                <Button Height="93" Margin="5">Delete Employee</Button>
+                <Button Name="btnDelete" Height="93" Margin="5" Click="btnDelete_Click">Delete Employee</Button>
             </StackPanel>
         </StackPanel>
     </StackPanel>
