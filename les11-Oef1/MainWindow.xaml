@@ -20,6 +20,10 @@
         </TreeView>
         <StackPanel Orientation="Vertical">
             <StackPanel Orientation="Horizontal" Margin="5">
+                <TextBlock Width="75" Margin="5">Id</TextBlock>
+                <TextBox Margin="5" Width="150"></TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="5">
                 <TextBlock Width="75" Margin="5">Firstname</TextBlock>
                 <TextBox Margin="5" Width="150" Name="txtFirstName"></TextBox>
             </StackPanel>
@@ -29,7 +33,14 @@
             </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="5">
                 <TextBlock Width="75" Margin="5">Job</TextBlock>
-                <TextBox Margin="5" Width="150" Name="txtJob"></TextBox>
+                <ComboBox Margin="5" Width="150" Name="cmbJob"></ComboBox>
+            </StackPanel>
+            <StackPanel>
+                <Button Margin="5">Update Employee</Button>
+                <Button Margin="5">Insert Employee</Button>
+            </StackPanel>
+            <StackPanel>
+                <Button Height="93" Margin="5">Delete Employee</Button>
             </StackPanel>
         </StackPanel>
     </StackPanel>

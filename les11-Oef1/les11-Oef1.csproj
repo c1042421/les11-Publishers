@@ -67,7 +67,6 @@
     <Compile Include="Employee.cs">
       <DependentUpon>PubModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="EmployeeExtra.cs" />
     <Compile Include="Job.cs">
       <DependentUpon>PubModel.tt</DependentUpon>
     </Compile>
