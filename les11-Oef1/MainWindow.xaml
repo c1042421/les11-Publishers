@@ -6,7 +6,31 @@
         xmlns:local="clr-namespace:les11_Oef1"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        
-    </Grid>
+    <StackPanel Orientation="Horizontal">
+        <TreeView Width="250" Margin="5" Name="treePublishers" SelectedItemChanged="treePublishers_SelectedItemChanged">
+            <TreeView.Resources>
+                <HierarchicalDataTemplate DataType="{x:Type local:Publisher}" ItemsSource="{Binding Path=Employees}">
+                    <TextBlock Text="{Binding Path=pub_name}"></TextBlock>
+                </HierarchicalDataTemplate>
+                
+                <DataTemplate DataType="{x:Type local:Employee}">
+                    <TextBlock Text="{Binding Path=fname}"></TextBlock>
+                </DataTemplate>
+            </TreeView.Resources>
+        </TreeView>
+        <StackPanel Orientation="Vertical">
+            <StackPanel Orientation="Horizontal" Margin="5">
+                <TextBlock Width="75" Margin="5">Firstname</TextBlock>
+                <TextBox Margin="5" Width="150" Name="txtFirstName"></TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="5">
+                <TextBlock Width="75" Margin="5">Lastname</TextBlock>
+                <TextBox Margin="5" Width="150" Name="txtLastName"></TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="5">
+                <TextBlock Width="75" Margin="5">Job</TextBlock>
+                <TextBox Margin="5" Width="150" Name="txtJob"></TextBox>
+            </StackPanel>
+        </StackPanel>
+    </StackPanel>
 </Window>

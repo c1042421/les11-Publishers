@@ -20,9 +20,25 @@ namespace les11_Oef1
     /// </summary>
     public partial class MainWindow : Window
     {
+
+        DataManager dm = new DataManager();
         public MainWindow()
         {
             InitializeComponent();
+
+            treePublishers.ItemsSource = dm.GetAllPublishers();
+        }
+
+        private void treePublishers_SelectedItemChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
+        {
+            Employee employee = treePublishers.SelectedItem as Employee;
+
+            if (employee != null)
+            {
+                txtFirstName.Text = employee.fname;
+                txtLastName.Text = employee.lname;
+                txtJob.Text = dm.GetJobByID(employee.job_id).job_desc;
+            }
         }
     }
 }
